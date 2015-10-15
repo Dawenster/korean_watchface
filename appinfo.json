@@ -19,15 +19,22 @@
       { "type": "png", "name": "3",   "file": "images/3.png"   },
       { "type": "png", "name": "4",   "file": "images/4.png"   },
       { "type": "png", "name": "5",   "file": "images/5.png"   },
-      { "type": "png", "name": "6a",  "file": "images/6a.png"  },
-      { "type": "png", "name": "6b",  "file": "images/6b.png"  },
+      { "type": "png", "name": "6",   "file": "images/6.png"   },
+      { "type": "png", "name": "6m",  "file": "images/6m.png"  },
       { "type": "png", "name": "7",   "file": "images/7.png"   },
       { "type": "png", "name": "8",   "file": "images/8.png"   },
       { "type": "png", "name": "9",   "file": "images/9.png"   },
-      { "type": "png", "name": "10a", "file": "images/10a.png" },
-      { "type": "png", "name": "10b", "file": "images/10b.png" },
-      { "type": "png", "name": "d",   "file": "images/d.png"   },
-      { "type": "png", "name": "m",   "file": "images/m.png"   }
+      { "type": "png", "name": "10",  "file": "images/10.png"  },
+      { "type": "png", "name": "10m", "file": "images/10m.png" },
+      { "type": "png", "name": "bun", "file": "images/bun.png" },
+      { "type": "png", "name": "hoa", "file": "images/hoa.png" },
+      { "type": "png", "name": "il",  "file": "images/il.png"  },
+      { "type": "png", "name": "kum", "file": "images/kum.png" },
+      { "type": "png", "name": "mok", "file": "images/mok.png" },
+      { "type": "png", "name": "su",  "file": "images/su.png"  },
+      { "type": "png", "name": "to",  "file": "images/to.png"  },
+      { "type": "png", "name": "wul", "file": "images/wul.png" },
+      { "type": "png", "name": "yo",  "file": "images/yo.png"  }
     ]
   }
 }
