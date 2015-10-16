@@ -14,26 +14,40 @@
   },
   "resources": {
     "media": [
+      { "type": "png", "name": "a", "file": "images/a.png" },
       { "type": "png", "name": "bun", "file": "images/bun.png" },
       { "type": "png", "name": "chil", "file": "images/chil.png" },
+      { "type": "png", "name": "da", "file": "images/da.png" },
+      { "type": "png", "name": "du", "file": "images/du.png" },
+      { "type": "png", "name": "dul", "file": "images/dul.png" },
+      { "type": "png", "name": "gong", "file": "images/gong.png" },
+      { "type": "png", "name": "gope", "file": "images/gong.png" },
+      { "type": "png", "name": "han", "file": "images/han.png" },
       { "type": "png", "name": "hoa", "file": "images/hoa.png" },
+      { "type": "png", "name": "hope", "file": "images/hope.png" },
       { "type": "png", "name": "il", "file": "images/il.png" },
       { "type": "png", "name": "ku", "file": "images/ku.png" },
       { "type": "png", "name": "kum", "file": "images/kum.png" },
       { "type": "png", "name": "mok", "file": "images/mok.png" },
+      { "type": "png", "name": "neh", "file": "images/neh.png" },
       { "type": "png", "name": "o", "file": "images/o.png" },
       { "type": "png", "name": "pal", "file": "images/pal.png" },
       { "type": "png", "name": "sa", "file": "images/sa.png" },
       { "type": "png", "name": "sam", "file": "images/sam.png" },
+      { "type": "png", "name": "seh", "file": "images/seh.png" },
       { "type": "png", "name": "ship", "file": "images/ship.png" },
       { "type": "png", "name": "si", "file": "images/si.png" },
       { "type": "png", "name": "su", "file": "images/su.png" },
+      { "type": "png", "name": "suh", "file": "images/suh.png" },
       { "type": "png", "name": "to", "file": "images/to.png" },
       { "type": "png", "name": "wul", "file": "images/wul.png" },
+      { "type": "png", "name": "yeo", "file": "images/yeo.png" },
+      { "type": "png", "name": "yeuh", "file": "images/yeuh.png" },
       { "type": "png", "name": "yi", "file": "images/yi.png" },
       { "type": "png", "name": "yo", "file": "images/yo.png" }
       { "type": "png", "name": "yu", "file": "images/yu.png" },
       { "type": "png", "name": "yuk", "file": "images/yuk.png" },
+      { "type": "png", "name": "yul", "file": "images/yul.png" }
     ]
   }
 }
