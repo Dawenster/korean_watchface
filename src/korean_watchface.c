@@ -7,20 +7,14 @@ static BitmapLayer *s_hour_1_layer;
 
 static void update_time() {
   // Get a tm structure
-  time_t temp = time(NULL); 
+  time_t temp = time(NULL);
   struct tm *tick_time = localtime(&temp);
 
-  // Create a long-lived buffer
-  static char buffer[] = "00:00";
-
-  // Write the current hours and minutes into the buffer
-  if(clock_is_24h_style() == true) {
-    //Use 2h hour format
-    strftime(buffer, sizeof("00:00"), "%H:%M", tick_time);
-  } else {
-    //Use 12 hour format
-    strftime(buffer, sizeof("00:00"), "%I:%M", tick_time);
-  }
+  APP_LOG(APP_LOG_LEVEL_INFO, "Hour: %d", tick_time->tm_hour);
+  APP_LOG(APP_LOG_LEVEL_INFO, "Minutes: %d", tick_time->tm_min);
+  APP_LOG(APP_LOG_LEVEL_INFO, "Month: %d", tick_time->tm_mon);
+  APP_LOG(APP_LOG_LEVEL_INFO, "Day: %d", tick_time->tm_mday);
+  APP_LOG(APP_LOG_LEVEL_INFO, "Day of week: %d", tick_time->tm_wday);
 }
 
 static void main_window_load(Window *window) {
