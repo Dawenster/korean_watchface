@@ -28,9 +28,11 @@ static void update_time() {
 }
 
 static void main_window_load(Window *window) {
+  window_set_background_color(window, GColorBlack);
+
   // Create GBitmap, then set to created BitmapLayer
   s_hour_1_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
-  s_hour_1_layer = bitmap_layer_create(GRect(0, 0, 33, 33));
+  s_hour_1_layer = bitmap_layer_create(GRect(6, 0, 33, 33));
   bitmap_layer_set_bitmap(s_hour_1_layer, s_hour_1_bitmap);
   layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_hour_1_layer));
 
