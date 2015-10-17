@@ -1,20 +1,29 @@
 #include <pebble.h>
+#include <words.h>
   
 static Window *s_main_window;
 
 static GBitmap *s_hour_1_bitmap;
 static BitmapLayer *s_hour_1_layer;
 
-static void update_time() {
-  // Get a tm structure
-  time_t temp = time(NULL);
-  struct tm *tick_time = localtime(&temp);
+// char month_words[4][16];
 
+static void log_time_details(struct tm *tick_time) {
   APP_LOG(APP_LOG_LEVEL_INFO, "Hour: %d", tick_time->tm_hour);
   APP_LOG(APP_LOG_LEVEL_INFO, "Minutes: %d", tick_time->tm_min);
   APP_LOG(APP_LOG_LEVEL_INFO, "Month: %d", tick_time->tm_mon);
   APP_LOG(APP_LOG_LEVEL_INFO, "Day: %d", tick_time->tm_mday);
   APP_LOG(APP_LOG_LEVEL_INFO, "Day of week: %d", tick_time->tm_wday);
+}
+
+static void update_time() {
+  // Get a tm structure
+  time_t temp = time(NULL);
+  struct tm *tick_time = localtime(&temp);
+  log_time_details(tick_time);
+
+  month_in_words(tick_time->tm_mon);
+  APP_LOG(APP_LOG_LEVEL_INFO, month_words[1]);
 }
 
 static void main_window_load(Window *window) {
