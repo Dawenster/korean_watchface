@@ -24,19 +24,16 @@ static void update_time() {
 
   month_in_words(tick_time->tm_mon);
   APP_LOG(APP_LOG_LEVEL_INFO, month_words[1]);
-}
-
-static void main_window_load(Window *window) {
-  window_set_background_color(window, GColorBlack);
 
   // Create GBitmap, then set to created BitmapLayer
   s_hour_1_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
   s_hour_1_layer = bitmap_layer_create(GRect(6, 0, 33, 33));
   bitmap_layer_set_bitmap(s_hour_1_layer, s_hour_1_bitmap);
-  layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_hour_1_layer));
-  
-  // Make sure the time is displayed from the start
-  update_time();
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_1_layer));
+}
+
+static void main_window_load(Window *window) {
+  window_set_background_color(window, GColorBlack); 
 }
 
 static void main_window_unload(Window *window) {
