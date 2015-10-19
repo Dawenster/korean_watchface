@@ -1,5 +1,6 @@
 #include <pebble.h>
 #include <hour.h>
+#include <minute.h>
   
 static Window *s_main_window;
 
@@ -50,7 +51,7 @@ static void log_time_details(struct tm *tick_time) {
   APP_LOG(APP_LOG_LEVEL_INFO, "Day of week: %d", tick_time->tm_wday);
 }
 
-static void set_hour(int hour) {
+static void set_hour() {
   s_hour_1_bitmap = gbitmap_create_with_resource(hour_char_1);
   s_hour_1_layer = bitmap_layer_create(GRect(6, 0, 33, 33));
   bitmap_layer_set_bitmap(s_hour_1_layer, s_hour_1_bitmap);
@@ -69,6 +70,32 @@ static void set_hour(int hour) {
   }
 }
 
+static void set_minute() {
+  s_minute_1_bitmap = gbitmap_create_with_resource(minute_char_1);
+  s_minute_1_layer = bitmap_layer_create(GRect(6, 33, 33, 33));
+  bitmap_layer_set_bitmap(s_minute_1_layer, s_minute_1_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_1_layer));
+
+  s_minute_2_bitmap = gbitmap_create_with_resource(minute_char_2);
+  s_minute_2_layer = bitmap_layer_create(GRect(39, 33, 33, 33));
+  bitmap_layer_set_bitmap(s_minute_2_layer, s_minute_2_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_2_layer));
+
+  if (minute_char_2 != RESOURCE_ID_BUN) {
+    s_minute_3_bitmap = gbitmap_create_with_resource(minute_char_3);
+    s_minute_3_layer = bitmap_layer_create(GRect(72, 33, 33, 33));
+    bitmap_layer_set_bitmap(s_minute_3_layer, s_minute_3_bitmap);
+    layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_3_layer));
+  }
+
+  if (minute_char_2 != RESOURCE_ID_BUN && minute_char_3 != RESOURCE_ID_BUN) {
+    s_minute_4_bitmap = gbitmap_create_with_resource(minute_char_4);
+    s_minute_4_layer = bitmap_layer_create(GRect(105, 33, 33, 33));
+    bitmap_layer_set_bitmap(s_minute_4_layer, s_minute_4_bitmap);
+    layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_4_layer));
+  }
+}
+
 static void update_time() {
   // Get a tm structure
   time_t temp = time(NULL);
@@ -76,7 +103,10 @@ static void update_time() {
   log_time_details(tick_time);
 
   set_hour_chars(tick_time->tm_hour);
-  set_hour(tick_time->tm_hour);
+  set_hour();
+
+  set_minute_chars(tick_time->tm_min);
+  set_minute();
 }
 
 static void main_window_load(Window *window) {
