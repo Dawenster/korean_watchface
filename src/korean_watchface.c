@@ -105,9 +105,41 @@ static void main_window_load(Window *window) {
 static void main_window_unload(Window *window) {
   // Destroy GBitmap
   gbitmap_destroy(s_hour_1_bitmap);
+  gbitmap_destroy(s_hour_2_bitmap);
+  gbitmap_destroy(s_hour_3_bitmap);
+  gbitmap_destroy(s_minute_1_bitmap);
+  gbitmap_destroy(s_minute_2_bitmap);
+  gbitmap_destroy(s_minute_3_bitmap);
+  gbitmap_destroy(s_minute_4_bitmap);
+  gbitmap_destroy(s_wday_1_bitmap);
+  gbitmap_destroy(s_wday_2_bitmap);
+  gbitmap_destroy(s_wday_3_bitmap);
+  gbitmap_destroy(s_month_1_bitmap);
+  gbitmap_destroy(s_month_2_bitmap);
+  gbitmap_destroy(s_month_3_bitmap);
+  gbitmap_destroy(s_day_1_bitmap);
+  gbitmap_destroy(s_day_2_bitmap);
+  gbitmap_destroy(s_day_3_bitmap);
+  gbitmap_destroy(s_day_4_bitmap);
 
   // Destroy BitmapLayer
   bitmap_layer_destroy(s_hour_1_layer);
+  bitmap_layer_destroy(s_hour_2_layer);
+  bitmap_layer_destroy(s_hour_3_layer);
+  bitmap_layer_destroy(s_minute_1_layer);
+  bitmap_layer_destroy(s_minute_2_layer);
+  bitmap_layer_destroy(s_minute_3_layer);
+  bitmap_layer_destroy(s_minute_4_layer);
+  bitmap_layer_destroy(s_wday_1_layer);
+  bitmap_layer_destroy(s_wday_2_layer);
+  bitmap_layer_destroy(s_wday_3_layer);
+  bitmap_layer_destroy(s_month_1_layer);
+  bitmap_layer_destroy(s_month_2_layer);
+  bitmap_layer_destroy(s_month_3_layer);
+  bitmap_layer_destroy(s_day_1_layer);
+  bitmap_layer_destroy(s_day_2_layer);
+  bitmap_layer_destroy(s_day_3_layer);
+  bitmap_layer_destroy(s_day_4_layer);
 }
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
