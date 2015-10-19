@@ -5,15 +5,42 @@ static Window *s_main_window;
 
 static GBitmap *s_hour_1_bitmap;
 static BitmapLayer *s_hour_1_layer;
-
 static GBitmap *s_hour_2_bitmap;
 static BitmapLayer *s_hour_2_layer;
-
 static GBitmap *s_hour_3_bitmap;
 static BitmapLayer *s_hour_3_layer;
 
-static GBitmap *s_hour_4_bitmap;
-static BitmapLayer *s_hour_4_layer;
+static GBitmap *s_minute_1_bitmap;
+static BitmapLayer *s_minute_1_layer;
+static GBitmap *s_minute_2_bitmap;
+static BitmapLayer *s_minute_2_layer;
+static GBitmap *s_minute_3_bitmap;
+static BitmapLayer *s_minute_3_layer;
+static GBitmap *s_minute_4_bitmap;
+static BitmapLayer *s_minute_4_layer;
+
+static GBitmap *s_wday_1_bitmap;
+static BitmapLayer *s_wday_1_layer;
+static GBitmap *s_wday_2_bitmap;
+static BitmapLayer *s_wday_2_layer;
+static GBitmap *s_wday_3_bitmap;
+static BitmapLayer *s_wday_3_layer;
+
+static GBitmap *s_month_1_bitmap;
+static BitmapLayer *s_month_1_layer;
+static GBitmap *s_month_2_bitmap;
+static BitmapLayer *s_month_2_layer;
+static GBitmap *s_month_3_bitmap;
+static BitmapLayer *s_month_3_layer;
+
+static GBitmap *s_day_1_bitmap;
+static BitmapLayer *s_day_1_layer;
+static GBitmap *s_day_2_bitmap;
+static BitmapLayer *s_day_2_layer;
+static GBitmap *s_day_3_bitmap;
+static BitmapLayer *s_day_3_layer;
+static GBitmap *s_day_4_bitmap;
+static BitmapLayer *s_day_4_layer;
 
 // char month_words[4][16];
 
@@ -49,11 +76,6 @@ static void update_time() {
   s_hour_3_layer = bitmap_layer_create(GRect(72, 0, 33, 33));
   bitmap_layer_set_bitmap(s_hour_3_layer, s_hour_3_bitmap);
   layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_3_layer));
-
-  s_hour_4_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
-  s_hour_4_layer = bitmap_layer_create(GRect(105, 0, 33, 33));
-  bitmap_layer_set_bitmap(s_hour_4_layer, s_hour_4_bitmap);
-  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_4_layer));
 }
 
 static void main_window_load(Window *window) {
