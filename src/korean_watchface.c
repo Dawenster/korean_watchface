@@ -61,7 +61,7 @@ static void set_hour(int hour) {
   bitmap_layer_set_bitmap(s_hour_2_layer, s_hour_2_bitmap);
   layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_2_layer));
 
-  if (hour_char_3) {
+  if (hour_char_2 != RESOURCE_ID_SI) {
     s_hour_3_bitmap = gbitmap_create_with_resource(hour_char_3);
     s_hour_3_layer = bitmap_layer_create(GRect(72, 0, 33, 33));
     bitmap_layer_set_bitmap(s_hour_3_layer, s_hour_3_bitmap);
