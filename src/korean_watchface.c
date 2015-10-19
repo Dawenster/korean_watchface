@@ -1,5 +1,5 @@
 #include <pebble.h>
-#include <words.h>
+#include <hour.h>
   
 static Window *s_main_window;
 
@@ -42,8 +42,6 @@ static BitmapLayer *s_day_3_layer;
 static GBitmap *s_day_4_bitmap;
 static BitmapLayer *s_day_4_layer;
 
-// char month_words[4][16];
-
 static void log_time_details(struct tm *tick_time) {
   APP_LOG(APP_LOG_LEVEL_INFO, "Hour: %d", tick_time->tm_hour);
   APP_LOG(APP_LOG_LEVEL_INFO, "Minutes: %d", tick_time->tm_min);
@@ -52,50 +50,33 @@ static void log_time_details(struct tm *tick_time) {
   APP_LOG(APP_LOG_LEVEL_INFO, "Day of week: %d", tick_time->tm_wday);
 }
 
+static void set_hour(int hour) {
+  s_hour_1_bitmap = gbitmap_create_with_resource(hour_char_1);
+  s_hour_1_layer = bitmap_layer_create(GRect(6, 0, 33, 33));
+  bitmap_layer_set_bitmap(s_hour_1_layer, s_hour_1_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_1_layer));
+
+  s_hour_2_bitmap = gbitmap_create_with_resource(hour_char_2);
+  s_hour_2_layer = bitmap_layer_create(GRect(39, 0, 33, 33));
+  bitmap_layer_set_bitmap(s_hour_2_layer, s_hour_2_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_2_layer));
+
+  if (hour_char_3) {
+    s_hour_3_bitmap = gbitmap_create_with_resource(hour_char_3);
+    s_hour_3_layer = bitmap_layer_create(GRect(72, 0, 33, 33));
+    bitmap_layer_set_bitmap(s_hour_3_layer, s_hour_3_bitmap);
+    layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_3_layer));
+  }
+}
+
 static void update_time() {
   // Get a tm structure
   time_t temp = time(NULL);
   struct tm *tick_time = localtime(&temp);
   log_time_details(tick_time);
 
-  month_in_words(tick_time->tm_mon);
-  APP_LOG(APP_LOG_LEVEL_INFO, month_words[1]);
-
-  // Create GBitmap, then set to created BitmapLayer
-  s_hour_1_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
-  s_hour_1_layer = bitmap_layer_create(GRect(6, 0, 33, 33));
-  bitmap_layer_set_bitmap(s_hour_1_layer, s_hour_1_bitmap);
-  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_1_layer));
-
-  s_hour_2_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
-  s_hour_2_layer = bitmap_layer_create(GRect(39, 0, 33, 33));
-  bitmap_layer_set_bitmap(s_hour_2_layer, s_hour_2_bitmap);
-  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_2_layer));
-
-  s_hour_3_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
-  s_hour_3_layer = bitmap_layer_create(GRect(72, 0, 33, 33));
-  bitmap_layer_set_bitmap(s_hour_3_layer, s_hour_3_bitmap);
-  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_3_layer));
-
-  s_minute_1_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
-  s_minute_1_layer = bitmap_layer_create(GRect(6, 33, 33, 33));
-  bitmap_layer_set_bitmap(s_minute_1_layer, s_minute_1_bitmap);
-  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_1_layer));
-
-  s_wday_1_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
-  s_wday_1_layer = bitmap_layer_create(GRect(6, 66, 33, 33));
-  bitmap_layer_set_bitmap(s_wday_1_layer, s_wday_1_bitmap);
-  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_wday_1_layer));
-
-  s_month_1_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
-  s_month_1_layer = bitmap_layer_create(GRect(6, 99, 33, 33));
-  bitmap_layer_set_bitmap(s_month_1_layer, s_month_1_bitmap);
-  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_month_1_layer));
-
-  s_day_1_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
-  s_day_1_layer = bitmap_layer_create(GRect(6, 132, 33, 33));
-  bitmap_layer_set_bitmap(s_day_1_layer, s_day_1_bitmap);
-  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_day_1_layer));
+  set_hour_chars(tick_time->tm_hour);
+  set_hour(tick_time->tm_hour);
 }
 
 static void main_window_load(Window *window) {
