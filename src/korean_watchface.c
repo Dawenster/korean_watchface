@@ -44,6 +44,7 @@ static GBitmap *s_day_4_bitmap;
 static BitmapLayer *s_day_4_layer;
 
 static void log_time_details(struct tm *tick_time) {
+  APP_LOG(APP_LOG_LEVEL_INFO, "******************************");
   APP_LOG(APP_LOG_LEVEL_INFO, "Hour: %d", tick_time->tm_hour);
   APP_LOG(APP_LOG_LEVEL_INFO, "Minutes: %d", tick_time->tm_min);
   APP_LOG(APP_LOG_LEVEL_INFO, "Month: %d", tick_time->tm_mon);
@@ -86,13 +87,13 @@ static void set_minute() {
     s_minute_3_layer = bitmap_layer_create(GRect(72, 33, 33, 33));
     bitmap_layer_set_bitmap(s_minute_3_layer, s_minute_3_bitmap);
     layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_3_layer));
-  }
 
-  if (minute_char_2 != RESOURCE_ID_BUN && minute_char_3 != RESOURCE_ID_BUN) {
-    s_minute_4_bitmap = gbitmap_create_with_resource(minute_char_4);
-    s_minute_4_layer = bitmap_layer_create(GRect(105, 33, 33, 33));
-    bitmap_layer_set_bitmap(s_minute_4_layer, s_minute_4_bitmap);
-    layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_4_layer));
+    if (minute_char_3 != RESOURCE_ID_BUN) {
+      s_minute_4_bitmap = gbitmap_create_with_resource(minute_char_4);
+      s_minute_4_layer = bitmap_layer_create(GRect(105, 33, 33, 33));
+      bitmap_layer_set_bitmap(s_minute_4_layer, s_minute_4_bitmap);
+      layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_4_layer));
+    }
   }
 }
 
@@ -109,12 +110,7 @@ static void update_time() {
   set_minute();
 }
 
-static void main_window_load(Window *window) {
-  window_set_background_color(window, GColorBlack); 
-  update_time();
-}
-
-static void main_window_unload(Window *window) {
+static void dump_characters() {
   // Destroy GBitmap
   gbitmap_destroy(s_hour_1_bitmap);
   gbitmap_destroy(s_hour_2_bitmap);
@@ -154,7 +150,17 @@ static void main_window_unload(Window *window) {
   bitmap_layer_destroy(s_day_4_layer);
 }
 
+static void main_window_load(Window *window) {
+  window_set_background_color(window, GColorBlack); 
+  update_time();
+}
+
+static void main_window_unload(Window *window) {
+  dump_characters();
+}
+
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
+  dump_characters();
   update_time();
 }
   
