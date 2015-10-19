@@ -63,12 +63,10 @@ static void set_hour() {
   bitmap_layer_set_bitmap(s_hour_2_layer, s_hour_2_bitmap);
   layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_2_layer));
 
-  if (hour_char_2 != RESOURCE_ID_SI) {
-    s_hour_3_bitmap = gbitmap_create_with_resource(hour_char_3);
-    s_hour_3_layer = bitmap_layer_create(GRect(72, 0, 33, 33));
-    bitmap_layer_set_bitmap(s_hour_3_layer, s_hour_3_bitmap);
-    layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_3_layer));
-  }
+  s_hour_3_bitmap = gbitmap_create_with_resource(hour_char_3);
+  s_hour_3_layer = bitmap_layer_create(GRect(72, 0, 33, 33));
+  bitmap_layer_set_bitmap(s_hour_3_layer, s_hour_3_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_3_layer));
 }
 
 static void set_minute() {
@@ -82,32 +80,15 @@ static void set_minute() {
   bitmap_layer_set_bitmap(s_minute_2_layer, s_minute_2_bitmap);
   layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_2_layer));
 
-  if (minute_char_2 != RESOURCE_ID_BUN) {
-    s_minute_3_bitmap = gbitmap_create_with_resource(minute_char_3);
-    s_minute_3_layer = bitmap_layer_create(GRect(72, 33, 33, 33));
-    bitmap_layer_set_bitmap(s_minute_3_layer, s_minute_3_bitmap);
-    layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_3_layer));
+  s_minute_3_bitmap = gbitmap_create_with_resource(minute_char_3);
+  s_minute_3_layer = bitmap_layer_create(GRect(72, 33, 33, 33));
+  bitmap_layer_set_bitmap(s_minute_3_layer, s_minute_3_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_3_layer));
 
-    if (minute_char_3 != RESOURCE_ID_BUN) {
-      s_minute_4_bitmap = gbitmap_create_with_resource(minute_char_4);
-      s_minute_4_layer = bitmap_layer_create(GRect(105, 33, 33, 33));
-      bitmap_layer_set_bitmap(s_minute_4_layer, s_minute_4_bitmap);
-      layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_4_layer));
-    }
-  }
-}
-
-static void update_time() {
-  // Get a tm structure
-  time_t temp = time(NULL);
-  struct tm *tick_time = localtime(&temp);
-  log_time_details(tick_time);
-
-  set_hour_chars(tick_time->tm_hour);
-  set_hour();
-
-  set_minute_chars(tick_time->tm_min);
-  set_minute();
+  s_minute_4_bitmap = gbitmap_create_with_resource(minute_char_4);
+  s_minute_4_layer = bitmap_layer_create(GRect(105, 33, 33, 33));
+  bitmap_layer_set_bitmap(s_minute_4_layer, s_minute_4_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_4_layer));
 }
 
 static void dump_characters() {
@@ -150,6 +131,21 @@ static void dump_characters() {
   bitmap_layer_destroy(s_day_4_layer);
 }
 
+static void update_time() {
+  // Get a tm structure
+  time_t temp = time(NULL);
+  struct tm *tick_time = localtime(&temp);
+  log_time_details(tick_time);
+
+  dump_characters();
+
+  set_hour_chars(tick_time->tm_hour);
+  set_hour();
+
+  set_minute_chars(tick_time->tm_min);
+  set_minute();
+}
+
 static void main_window_load(Window *window) {
   window_set_background_color(window, GColorBlack); 
   update_time();
@@ -160,7 +156,6 @@ static void main_window_unload(Window *window) {
 }
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
-  dump_characters();
   update_time();
 }
   

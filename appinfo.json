@@ -46,6 +46,7 @@
       { "type": "png", "name": "YO", "file": "images/yo.png" },
       { "type": "png", "name": "YU", "file": "images/yu.png" },
       { "type": "png", "name": "YUK", "file": "images/yuk.png" },
+      { "type": "png", "name": "BLANK", "file": "images/blank.png" },
       { "type": "png", "name": "YUL", "file": "images/yul.png" }
     ]
   }

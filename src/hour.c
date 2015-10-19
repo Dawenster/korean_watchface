@@ -15,21 +15,25 @@ void set_hour_chars(int hour) {
     case 1:
       hour_char_1 = RESOURCE_ID_HAN;
       hour_char_2 = RESOURCE_ID_SI;
+      hour_char_3 = RESOURCE_ID_BLANK;
       break;
 
     case 2:
       hour_char_1 = RESOURCE_ID_DU;
       hour_char_2 = RESOURCE_ID_SI;
+      hour_char_3 = RESOURCE_ID_BLANK;
       break;
 
     case 3:
       hour_char_1 = RESOURCE_ID_SEH;
       hour_char_2 = RESOURCE_ID_SI;
+      hour_char_3 = RESOURCE_ID_BLANK;
       break;
 
     case 4:
       hour_char_1 = RESOURCE_ID_NEH;
       hour_char_2 = RESOURCE_ID_SI;
+      hour_char_3 = RESOURCE_ID_BLANK;
       break;
 
     case 5:
@@ -65,6 +69,7 @@ void set_hour_chars(int hour) {
     case 10:
       hour_char_1 = RESOURCE_ID_YUL;
       hour_char_2 = RESOURCE_ID_SI;
+      hour_char_3 = RESOURCE_ID_BLANK;
       break;
 
     case 11:
@@ -82,21 +87,25 @@ void set_hour_chars(int hour) {
     case 13:
       hour_char_1 = RESOURCE_ID_HAN;
       hour_char_2 = RESOURCE_ID_SI;
+      hour_char_3 = RESOURCE_ID_BLANK;
       break;
 
     case 14:
       hour_char_1 = RESOURCE_ID_DU;
       hour_char_2 = RESOURCE_ID_SI;
+      hour_char_3 = RESOURCE_ID_BLANK;
       break;
 
     case 15:
       hour_char_1 = RESOURCE_ID_SEH;
       hour_char_2 = RESOURCE_ID_SI;
+      hour_char_3 = RESOURCE_ID_BLANK;
       break;
 
     case 16:
       hour_char_1 = RESOURCE_ID_NEH;
       hour_char_2 = RESOURCE_ID_SI;
+      hour_char_3 = RESOURCE_ID_BLANK;
       break;
 
     case 17:

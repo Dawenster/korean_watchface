@@ -10,116 +10,148 @@ void set_minute_chars(int minute) {
     case 0:
       minute_char_1 = RESOURCE_ID_GONG;
       minute_char_2 = RESOURCE_ID_BUN;
+      minute_char_3 = RESOURCE_ID_BLANK;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 1:
       minute_char_1 = RESOURCE_ID_IL;
       minute_char_2 = RESOURCE_ID_BUN;
+      minute_char_3 = RESOURCE_ID_BLANK;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 2:
       minute_char_1 = RESOURCE_ID_YI;
       minute_char_2 = RESOURCE_ID_BUN;
+      minute_char_3 = RESOURCE_ID_BLANK;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 3:
       minute_char_1 = RESOURCE_ID_SAM;
       minute_char_2 = RESOURCE_ID_BUN;
+      minute_char_3 = RESOURCE_ID_BLANK;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 4:
       minute_char_1 = RESOURCE_ID_SA;
       minute_char_2 = RESOURCE_ID_BUN;
+      minute_char_3 = RESOURCE_ID_BLANK;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 5:
       minute_char_1 = RESOURCE_ID_O;
       minute_char_2 = RESOURCE_ID_BUN;
+      minute_char_3 = RESOURCE_ID_BLANK;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 6:
       minute_char_1 = RESOURCE_ID_YUK;
       minute_char_2 = RESOURCE_ID_BUN;
+      minute_char_3 = RESOURCE_ID_BLANK;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 7:
       minute_char_1 = RESOURCE_ID_CHIL;
       minute_char_2 = RESOURCE_ID_BUN;
+      minute_char_3 = RESOURCE_ID_BLANK;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 8:
       minute_char_1 = RESOURCE_ID_PAL;
       minute_char_2 = RESOURCE_ID_BUN;
+      minute_char_3 = RESOURCE_ID_BLANK;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 9:
       minute_char_1 = RESOURCE_ID_KU;
       minute_char_2 = RESOURCE_ID_BUN;
+      minute_char_3 = RESOURCE_ID_BLANK;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 10:
       minute_char_1 = RESOURCE_ID_SHIP;
       minute_char_2 = RESOURCE_ID_BUN;
+      minute_char_3 = RESOURCE_ID_BLANK;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 11:
       minute_char_1 = RESOURCE_ID_SHIP;
       minute_char_2 = RESOURCE_ID_IL;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 12:
       minute_char_1 = RESOURCE_ID_SHIP;
       minute_char_2 = RESOURCE_ID_YI;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 13:
       minute_char_1 = RESOURCE_ID_SHIP;
       minute_char_2 = RESOURCE_ID_SAM;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 14:
       minute_char_1 = RESOURCE_ID_SHIP;
       minute_char_2 = RESOURCE_ID_SA;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 15:
       minute_char_1 = RESOURCE_ID_SHIP;
       minute_char_2 = RESOURCE_ID_O;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 16:
       minute_char_1 = RESOURCE_ID_SHIP;
       minute_char_2 = RESOURCE_ID_YUK;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 17:
       minute_char_1 = RESOURCE_ID_SHIP;
       minute_char_2 = RESOURCE_ID_CHIL;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 18:
       minute_char_1 = RESOURCE_ID_SHIP;
       minute_char_2 = RESOURCE_ID_PAL;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 19:
       minute_char_1 = RESOURCE_ID_SHIP;
       minute_char_2 = RESOURCE_ID_KU;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 20:
       minute_char_1 = RESOURCE_ID_YI;
       minute_char_2 = RESOURCE_ID_SHIP;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 21:
@@ -189,6 +221,7 @@ void set_minute_chars(int minute) {
       minute_char_1 = RESOURCE_ID_SAM;
       minute_char_2 = RESOURCE_ID_SHIP;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 31:
@@ -258,6 +291,7 @@ void set_minute_chars(int minute) {
       minute_char_1 = RESOURCE_ID_SA;
       minute_char_2 = RESOURCE_ID_SHIP;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 41:
@@ -327,6 +361,7 @@ void set_minute_chars(int minute) {
       minute_char_1 = RESOURCE_ID_O;
       minute_char_2 = RESOURCE_ID_SHIP;
       minute_char_3 = RESOURCE_ID_BUN;
+      minute_char_4 = RESOURCE_ID_BLANK;
       break;
 
     case 51:
