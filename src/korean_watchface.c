@@ -111,6 +111,7 @@ static void update_time() {
 
 static void main_window_load(Window *window) {
   window_set_background_color(window, GColorBlack); 
+  update_time();
 }
 
 static void main_window_unload(Window *window) {
