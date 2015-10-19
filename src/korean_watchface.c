@@ -76,6 +76,26 @@ static void update_time() {
   s_hour_3_layer = bitmap_layer_create(GRect(72, 0, 33, 33));
   bitmap_layer_set_bitmap(s_hour_3_layer, s_hour_3_bitmap);
   layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_hour_3_layer));
+
+  s_minute_1_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
+  s_minute_1_layer = bitmap_layer_create(GRect(6, 33, 33, 33));
+  bitmap_layer_set_bitmap(s_minute_1_layer, s_minute_1_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_1_layer));
+
+  s_wday_1_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
+  s_wday_1_layer = bitmap_layer_create(GRect(6, 66, 33, 33));
+  bitmap_layer_set_bitmap(s_wday_1_layer, s_wday_1_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_wday_1_layer));
+
+  s_month_1_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
+  s_month_1_layer = bitmap_layer_create(GRect(6, 99, 33, 33));
+  bitmap_layer_set_bitmap(s_month_1_layer, s_month_1_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_month_1_layer));
+
+  s_day_1_bitmap = gbitmap_create_with_resource(RESOURCE_ID_A);
+  s_day_1_layer = bitmap_layer_create(GRect(6, 132, 33, 33));
+  bitmap_layer_set_bitmap(s_day_1_layer, s_day_1_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_day_1_layer));
 }
 
 static void main_window_load(Window *window) {
