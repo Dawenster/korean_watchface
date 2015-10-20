@@ -1,8 +1,8 @@
 {
   "uuid": "78464c3b-a06f-446a-a73f-b64a4c9d9204",
-  "shortName": "korean_watchface",
-  "longName": "korean_watchface",
-  "companyName": "MakeAwesomeHappen",
+  "shortName": "Korean Watchface",
+  "longName": "Korean Watchface",
+  "companyName": "David Wen",
   "versionLabel": "1.0",
   "sdkVersion": "3",
   "targetPlatforms": ["aplite", "basalt"],
