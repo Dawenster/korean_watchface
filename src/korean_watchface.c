@@ -2,6 +2,7 @@
 #include <hour.h>
 #include <minute.h>
 #include <wday.h>
+#include <month.h>
   
 static Window *s_main_window;
 
@@ -109,6 +110,23 @@ static void set_wday() {
   layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_wday_3_layer));
 }
 
+static void set_month() {
+  s_month_1_bitmap = gbitmap_create_with_resource(month_char_1);
+  s_month_1_layer = bitmap_layer_create(GRect(6, 99, 33, 33));
+  bitmap_layer_set_bitmap(s_month_1_layer, s_month_1_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_month_1_layer));
+
+  s_month_2_bitmap = gbitmap_create_with_resource(month_char_2);
+  s_month_2_layer = bitmap_layer_create(GRect(39, 99, 33, 33));
+  bitmap_layer_set_bitmap(s_month_2_layer, s_month_2_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_month_2_layer));
+
+  s_month_3_bitmap = gbitmap_create_with_resource(month_char_3);
+  s_month_3_layer = bitmap_layer_create(GRect(72, 99, 33, 33));
+  bitmap_layer_set_bitmap(s_month_3_layer, s_month_3_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_month_3_layer));
+}
+
 static void dump_characters() {
   // Destroy GBitmap
   gbitmap_destroy(s_hour_1_bitmap);
@@ -165,6 +183,9 @@ static void update_time() {
 
   set_wday_chars(tick_time->tm_wday);
   set_wday();
+
+  set_month_chars(tick_time->tm_mon);
+  set_month();
 }
 
 static void main_window_load(Window *window) {
