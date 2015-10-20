@@ -1,6 +1,7 @@
 #include <pebble.h>
 #include <hour.h>
 #include <minute.h>
+#include <wday.h>
   
 static Window *s_main_window;
 
@@ -47,9 +48,9 @@ static void log_time_details(struct tm *tick_time) {
   APP_LOG(APP_LOG_LEVEL_INFO, "******************************");
   APP_LOG(APP_LOG_LEVEL_INFO, "Hour: %d", tick_time->tm_hour);
   APP_LOG(APP_LOG_LEVEL_INFO, "Minutes: %d", tick_time->tm_min);
+  APP_LOG(APP_LOG_LEVEL_INFO, "Day of week: %d", tick_time->tm_wday);
   APP_LOG(APP_LOG_LEVEL_INFO, "Month: %d", tick_time->tm_mon);
   APP_LOG(APP_LOG_LEVEL_INFO, "Day: %d", tick_time->tm_mday);
-  APP_LOG(APP_LOG_LEVEL_INFO, "Day of week: %d", tick_time->tm_wday);
 }
 
 static void set_hour() {
@@ -89,6 +90,23 @@ static void set_minute() {
   s_minute_4_layer = bitmap_layer_create(GRect(105, 33, 33, 33));
   bitmap_layer_set_bitmap(s_minute_4_layer, s_minute_4_bitmap);
   layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_minute_4_layer));
+}
+
+static void set_wday() {
+  s_wday_1_bitmap = gbitmap_create_with_resource(wday_char_1);
+  s_wday_1_layer = bitmap_layer_create(GRect(6, 66, 33, 33));
+  bitmap_layer_set_bitmap(s_wday_1_layer, s_wday_1_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_wday_1_layer));
+
+  s_wday_2_bitmap = gbitmap_create_with_resource(wday_char_2);
+  s_wday_2_layer = bitmap_layer_create(GRect(39, 66, 33, 33));
+  bitmap_layer_set_bitmap(s_wday_2_layer, s_wday_2_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_wday_2_layer));
+
+  s_wday_3_bitmap = gbitmap_create_with_resource(wday_char_3);
+  s_wday_3_layer = bitmap_layer_create(GRect(72, 66, 33, 33));
+  bitmap_layer_set_bitmap(s_wday_3_layer, s_wday_3_bitmap);
+  layer_add_child(window_get_root_layer(s_main_window), bitmap_layer_get_layer(s_wday_3_layer));
 }
 
 static void dump_characters() {
@@ -144,6 +162,9 @@ static void update_time() {
 
   set_minute_chars(tick_time->tm_min);
   set_minute();
+
+  set_wday_chars(tick_time->tm_wday);
+  set_wday();
 }
 
 static void main_window_load(Window *window) {
