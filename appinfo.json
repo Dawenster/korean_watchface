@@ -3,7 +3,7 @@
   "shortName": "Korean Watchface",
   "longName": "Korean Watchface",
   "companyName": "David Wen",
-  "versionLabel": "1.0.1",
+  "versionLabel": "1.1",
   "sdkVersion": "3",
   "targetPlatforms": ["aplite", "basalt"],
   "watchapp": {
