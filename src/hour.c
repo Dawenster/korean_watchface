@@ -141,6 +141,7 @@ void set_hour_chars(int hour) {
     case 22:
       hour_char_1 = RESOURCE_ID_B_YUL;
       hour_char_2 = RESOURCE_ID_B_SI;
+      hour_char_3 = RESOURCE_ID_BLANK;
       break;
 
     case 23:
