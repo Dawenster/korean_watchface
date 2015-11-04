@@ -7,7 +7,7 @@ uint32_t month_char_3;
 void set_month_chars(int month) {
   switch (month) {
     case 0:
-      month_char_3 = RESOURCE_ID_IL;
+      month_char_1 = RESOURCE_ID_IL;
       month_char_2 = RESOURCE_ID_WUL;
       month_char_3 = RESOURCE_ID_BLANK;
       break;
@@ -69,13 +69,13 @@ void set_month_chars(int month) {
     case 10:
       month_char_1 = RESOURCE_ID_SHIP;
       month_char_2 = RESOURCE_ID_IL;
-      month_char_2 = RESOURCE_ID_WUL;
+      month_char_3 = RESOURCE_ID_WUL;
       break;
 
     case 11:
       month_char_1 = RESOURCE_ID_SHIP;
       month_char_2 = RESOURCE_ID_YI;
-      month_char_2 = RESOURCE_ID_WUL;
+      month_char_3 = RESOURCE_ID_WUL;
       break;
 
     default:
