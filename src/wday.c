@@ -7,7 +7,7 @@ uint32_t wday_char_3;
 void set_wday_chars(int wday) {
   switch (wday) {
     case 0:
-      wday_char_3 = RESOURCE_ID_IL;
+      wday_char_1 = RESOURCE_ID_IL;
       wday_char_2 = RESOURCE_ID_YO;
       wday_char_3 = RESOURCE_ID_IL;
       break;
